@@ -18,14 +18,14 @@ main {
 ol {
   padding: 0;
 }
-.container__link {
+.link {
   text-decoration: none;
   color: black;
 }
-.container__link:active {
+.link:active {
   color: black;
 }
-.container__link:hover {
+.link:hover {
   color: black;
   text-decoration: underline;
 }

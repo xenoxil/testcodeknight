@@ -1,31 +1,24 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
-import styles from '@/styles/Home.module.css';
-import Clock from '@/components/Clock/Clock';
 import Link from 'next/link';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
     <>
       <main>
-        <div>
+        <section>
           <h2>Задания</h2>
           <ul className="container">
             <ol>
-              <a href="/clockPage" className="container__link">
+              <Link href="/clockPage" className="link">
                 Часы
-              </a>
+              </Link>
             </ol>
             <ol>
-              <a href="/halfCirclePage" className="container__link">
+              <Link href="/halfCirclePage" className="link">
                 Полукруг
-              </a>
+              </Link>
             </ol>
           </ul>
-        </div>
+        </section>
       </main>
     </>
   );
