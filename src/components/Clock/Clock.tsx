@@ -2,9 +2,9 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 
 const Clock = (props: any) => {
   const currentApproximateTime = new Date();
-  const [hours, setHours] = useState<number>(0);
-  const [minutes, setMinutes] = useState<number>(0);
-  const [seconds, setSeconds] = useState<number>(0);
+  const [hours, setHours] = useState<number>(currentApproximateTime.getHours());
+  const [minutes, setMinutes] = useState<number>(currentApproximateTime.getMinutes());
+  const [seconds, setSeconds] = useState<number>(currentApproximateTime.getSeconds());
   const numbers = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
   useLayoutEffect(() => {
@@ -14,11 +14,7 @@ const Clock = (props: any) => {
       clearInterval(timer);
     };
   }, []);
-  useLayoutEffect(() => {
-    console.log(`${hours}:${minutes}:${seconds}`);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [seconds]);
   function updateTime() {
     setSeconds((seconds) => {
       if (seconds === 59) {
