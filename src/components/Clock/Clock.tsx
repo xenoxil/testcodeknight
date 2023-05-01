@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
 
 const Clock = (props: any) => {
+  const currentApproximateTime = new Date();
   const [hours, setHours] = useState<number>(0);
   const [minutes, setMinutes] = useState<number>(0);
   const [seconds, setSeconds] = useState<number>(0);
@@ -80,7 +81,7 @@ const Clock = (props: any) => {
         className="clock__arrow clock__arrow_hour"
         style={{
           transform: `translateX(-49%) translateY(0) rotate(${
-            270 + ((minutes / 60) * 360 + hours / 12) * 360
+            270 + (((seconds / 60 + minutes) / 60 + hours) / 12) * 360
           }deg)`,
         }}
       />
@@ -88,7 +89,7 @@ const Clock = (props: any) => {
         className="clock__arrow clock__arrow_minute"
         style={{
           transform: `translateX(-49%) translateY(0) rotate(${
-            270 + ((seconds / 60) * 360 + minutes / 60) * 360
+            270 + ((seconds / 60 + minutes) / 60) * 360
           }deg)`,
         }}
       />
